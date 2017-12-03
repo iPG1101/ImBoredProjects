@@ -8,6 +8,7 @@
     ctx = c.getContext('2d');
   document.body.appendChild(c);
   function loop(){
+    fshs[0].draw();
     setTimeout(loop,100);
   };
   class fish {
@@ -30,4 +31,5 @@
       this.fish.src = "http://www.freepngimg.com/download/fish/10-fish-png-image.png";
     }
   }
+  fshs.push(new fish())
 </script>
