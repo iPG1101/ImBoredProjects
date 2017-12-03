@@ -1,0 +1,33 @@
+<script>
+  //this one is only javascript pretty much
+  //so are the rest probably
+  // Dec. 3, 2017
+  //  started 16:03 PM
+  var fshs = [];
+  var c = document.createElement('canvas'),
+    ctx = c.getContext('2d');
+  document.body.appendChild(c);
+  function loop(){
+    setTimeout(loop,100);
+  };
+  class fish {
+    draw(){
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rot+=this.rotvel);
+      if(Math.abs(this.rot>0.2)){
+        this.rotvel *= -1;
+      }
+      ctx.drawImage(this.fish, 0, 0, 32, 64);
+      ctx.restore();
+    }
+    constructor(){
+      this.fish = new Image();
+      this.x = 320;
+      this.y = 240;
+      this.rot = 0;
+      this.rotvel = 0.01;
+      this.fish.src = "http://www.freepngimg.com/download/fish/10-fish-png-image.png";
+    }
+  }
+</script>
