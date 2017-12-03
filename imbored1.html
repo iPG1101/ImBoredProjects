@@ -11,8 +11,8 @@
     fshs[0].draw();
     setTimeout(loop,100);
   };
-  class fish {
-    draw(){
+  function fish(){
+    this.draw=function(){
       ctx.save();
       ctx.translate(this.x, this.y);
       ctx.rotate(this.rot+=this.rotvel);
@@ -22,7 +22,7 @@
       ctx.drawImage(this.fish, 0, 0, 32, 64);
       ctx.restore();
     }
-    constructor(){
+    this.constructor=function(){
       this.fish = new Image();
       this.x = 320;
       this.y = 240;
